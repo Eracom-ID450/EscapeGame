@@ -81,7 +81,7 @@ Tu appuies sur la torche de la Lune.
 La torche du Soleil s’allume un instant.
 
 [[Continuer-&gt;Torches]]
-</tw-passagedata><tw-passagedata pid="9" name="PressStar" tags="" position="200,200" size="100,100">(set: $combo to $combo + &quot;⭐&quot;)
+  </tw-passagedata><tw-passagedata pid="9" name="PressStar" tags="" position="200,200" size="100,100">(set: $combo to $combo + &quot;⭐&quot;)
 (set: $length to $length + 1)
 La torche étoilée scintille.
 
@@ -135,9 +135,9 @@ Une inscription scintille :
 
 &quot;Le chemin s’ouvre à celui qui choisit ce qui doit survivre.&quot;
 
-[[Toucher la fresque 1 (altruisme)-&gt;ChoixBon]]  
-[[Toucher la fresque 2 (ambition)-&gt;ChoixMauvais]]  
-[[Toucher la fresque 3 (sagesse)-&gt;ChoixNeutre]]
+[[Toucher la fresque 1 -&gt;ChoixBon]]  
+[[Toucher la fresque 2 -&gt;ChoixMauvais]]  
+[[Toucher la fresque 3 -&gt;ChoixNeutre]]
 </tw-passagedata><tw-passagedata pid="17" name="ChoixBon" tags="" position="500,700" size="100,100">Le mur s&#39;ouvre sur la Chambre de la Pierre.
 
 [[Entrer-&gt;Pierre]]
@@ -153,27 +153,27 @@ Une apparition te parle :
 &quot;Pour prendre la pierre, il faut payer un prix.  
 Quel sera ton choix, voyageur ?&quot;
 
-[[Offrir un souvenir personnel (fin noble)-&gt;FinBonne]]  
-[[Arracher la pierre (fin tragique)-&gt;FinMauvaise]]  
-[[Proposer de devenir son gardien (fin neutre)-&gt;FinNeutre]]
+[[Offrir un souvenir personnel -&gt;FinBonne]]  
+[[Arracher la pierre -&gt;FinMauvaise]]  
+[[Proposer de devenir son gardien -&gt;FinNeutre]]
 </tw-passagedata><tw-passagedata pid="21" name="FinBonne" tags="" position="500,1100" size="100,100">Tu offres un précieux souvenir.  
 La pierre te reconnaît et t&#39;accorde sa bénédiction.
 
 Tu sors du donjon en véritable chevalier.
 
-FIN NOBLE
+FIN 
 </tw-passagedata><tw-passagedata pid="22" name="FinMauvaise" tags="" position="600,1100" size="100,100">Tu arraches la pierre.  
 La magie explose. Le donjon s’effondre.
 
 Tu deviens un esprit prisonnier des lieux.
 
-FIN TRAGIQUE
+FIN 
 </tw-passagedata><tw-passagedata pid="23" name="FinNeutre" tags="" position="700,1100" size="100,100">Tu proposes ton aide.  
 La pierre accepte : tu deviens son gardien.
 
 Tu pars, changé à jamais.
 
-FIN NEUTRE
+FIN 
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
