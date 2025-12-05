@@ -9,22 +9,38 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play escape game.</tw-noscript></noscript></tw-story>
-<tw-storydata name="escape game" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="88FAF2C9-C606-438F-8FF6-BA4E6705C797" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="début" tags="" position="800,300" size="100,100">Bienvenue dans l&#39;escape game, vous êtes coincés sur une île déserte.</tw-passagedata><tw-passagedata pid="2" name="Passage sans titre 1" tags="" position="800,425" size="100,100"> 
+<tw-storydata name="escape game" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="88FAF2C9-C606-438F-8FF6-BA4E6705C797" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="début" tags="" position="800,400" size="100,100"> Bienvenue dans l&#39;escape game, t&#39;es coincé sur une île déserte.
+
+
+
+
+ 
 [[ Voulez-vous sauter à l&#39;eau -&gt; mort]]
 
  
 
-[[ ou rester sur l&#39;île ? -&gt; rester sur l&#39;île]]
-
-</tw-passagedata><tw-passagedata pid="3" name=" rester sur l&#39;île" tags="" position="900,550" size="100,100">
+ [[ou rester sur l&#39;île? -&gt;rester]]
+</tw-passagedata><tw-passagedata pid="2" name="rester" tags="" position="800,575" size="100,100">Tu préfères : 
  
-[[ Vous préférez faire une sieste -&gt; mort]]
+[[ faire une sieste -&gt; mort]]
 
  
 
 [[ aller pêcher ? -&gt; pêcher]]
 
-[[ ou s&#39;entrainer au crawl ? -&gt; mort]]</tw-passagedata><tw-passagedata pid="4" name=" pêcher" tags="" position="1000,700" size="100,100">Bravo ! </tw-passagedata><tw-passagedata pid="5" name=" mort" tags="" position="700,550" size="100,100">sauter à l&#39;eau</tw-passagedata></tw-storydata>
+[[ ou s&#39;entrainer au crawl ? -&gt; mort]]</tw-passagedata><tw-passagedata pid="3" name=" pêcher" tags="" position="1000,700" size="100,100">Bravo ! Tu vois un poisson jaune et noir :
+
+[[ Tu le prends parce qu&#39;il est trop kawaï 🥺 -&gt; mort]]
+
+[[ Tu le prends pas   -&gt; yes]]</tw-passagedata><tw-passagedata pid="4" name=" mort" tags="" position="600,700" size="100,100">T&#39;es vraiment nul 😒</tw-passagedata><tw-passagedata pid="5" name=" yes" tags="" position="1000,825" size="100,100">Il était vénimeux, t&#39;as bien fait !
+Oh ! Tu vois une vieille corde à côté de toi.
+
+[[ Tu la prends pour faire un lasso   -&gt; req]]
+
+[[ Tu la prends pour l&#39;attacher à toi   -&gt; req]]
+
+
+[[ Tu la prends pour l&#39;attacher à un arbre et te balancer dans les airs   -&gt; non]]</tw-passagedata><tw-passagedata pid="6" name=" req" tags="" position="1000,950" size="100,100"></tw-passagedata><tw-passagedata pid="7" name=" non" tags="" position="1125,950" size="100,100">La corde est vieille tu vas tomber 🤦🏼‍♀️</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
