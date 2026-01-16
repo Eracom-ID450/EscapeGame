@@ -3,177 +3,1401 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>mon histoire</title>
+<title>histoire</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}tw-open-button[goto]{display:none}.debug-mode tw-open-button[replay],.debug-mode tw-open-button[goto]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 50%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0.25) 0%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}.debug-dialogs tw-backdrop:not(.eval-replay):not(.harlowe-crash){pointer-events:none;opacity:.1}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:14em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger .panel-tools .panel-rows>*,tw-debugger .panel-options .panel-rows>*{margin-top:.4rem;display:block}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none;top:-2px}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%;border:solid #fff !important}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .2rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play mon histoire.</tw-noscript></noscript></tw-story>
-<tw-storydata name="mon histoire" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="941CB405-D580-4C45-B6B3-BEE4F6CB02CF" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Pitch" tags="" position="600,0" size="100,100">Tu es un jeune apprenti chevalier envoyé dans le vieux donjon d’Élyndar pour récupérer un artefact magique : La Pierre du Souvenir.
-Mais dès ton entrée, la grande porte se referme derrière toi.
-Tu devras résoudre des énigmes anciennes et faire les bons choix… ou rester prisonnier pour toujours.
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play histoire.</tw-noscript></noscript></tw-story>
+<tw-storydata name="histoire" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="980A5950-1A81-4EF6-AE1B-4F1BE02FF6EE" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
-[[ START |START]]
-</tw-passagedata><tw-passagedata pid="2" name="START" tags="" position="600,200" size="100,100">(set: $combo to &quot;&quot;)
-(set: $solution to &quot;🌙☀️⭐🔥&quot;)
-(set: $length to 0)
+tw-story {
+  background-color: black;
+  font-family: "Crimson Text", serif;
+}
 
-Tu entres dans le donjon d’Élyndar. La lourde porte se referme derrière toi.
+/* Texte par défaut dans les passages */
+tw-passage {
+  color: black;
+  max-width: none !important; /* enlève la colonne étroite par défaut (Harlowe) */
+  width: 100%;
+}
 
-La première salle est éclairée par quatre torches, chacune marquée d’un symbole :
+/* Au cas où des wrappers limitent encore */
+tw-passage > * {
+  max-width: none !important;
+}
 
-🌙  ☀️  ⭐  🔥
+/* Liens (choix) : même couleur partout (normal + visited + hover) */
+tw-link,
+tw-link:visited {
+  color: #d4af37 !important;
+}
 
-Au mur : &quot;La lumière trace le chemin. Trouve l’ordre ancien.&quot;
+tw-link:hover {
+  color: #e6c66a !important;
+  text-decoration: underline;
+  font-size: inherit !important; /* IMPORTANT : évite que le layout bouge */
+}
 
-[[Approcher des torches-&gt;Torches]]
-[[Explorer le reste de la salle-&gt;Salle1]]
+/* ------- LETTRE ------- */
+.lettre {
+  max-width: 650px;      /* largeur d'une feuille */
+  padding: 40px;
 
-</tw-passagedata><tw-passagedata pid="3" name="Torches" tags="" position="400,100" size="100,100">Ton ordre actuel : $combo
+  background-color: #fffdf7; /* couleur papier */
+  border: 1px solid #d6d1c4; /* cadre discret */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 
-Choisis une torche :
+/* Lettre centrée (si tu veux l'utiliser) */
+.lettre-centre {
+  margin: 50px auto;
+}
 
-[[🌙-&gt;PressMoon]]
-[[☀️-&gt;PressSun]]
-[[⭐-&gt;PressStar]]
-[[🔥-&gt;PressFire]]
+/* Lettre à gauche (pour pages avec image à droite) */
+.lettre-gauche {
+  margin: 50px 0 50px 50px;
+  flex: 1 1 auto;     /* prend l'espace restant */
+  min-width: 520px;   /* évite d'être trop écrasée */
+}
 
-[[Effacer la combinaison-&gt;ResetCombo]]
-[[Valider la combinaison-&gt;CheckCombo]]
-[[Revenir-&gt;START]]
+/* ------- LAYOUT LETTRE + IMAGE ------- */
+.page-lettre {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  flex-wrap: nowrap;
+}
 
-</tw-passagedata><tw-passagedata pid="4" name="Salle1" tags="" position="800,100" size="100,100">Tu arrives dans une vaste salle circulaire. Tu vois :
+/* Images globalement : comportement stable */
+tw-passage img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
-- Un vieux grimoire posé sur un piédestal  
-- Une statue de chevalier brisée  
-- Une porte runique verrouillée
+/* Image à droite au format fixe */
+.image-droite {
+  flex: 0 0 280px;    /* largeur fixe dans le flex */
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  margin-top: 50px;
+}
 
-[[Examiner le grimoire-&gt;Grimoire]]  
-[[Inspecter la statue-&gt;Statue]]  
-[[Étudier la porte runique-&gt;PorteRune]]
-</tw-passagedata><tw-passagedata pid="5" name="Grimoire" tags="" position="800,300" size="100,100">Tu ouvres le grimoire. Une page attire ton attention :
+/* ------- .row : garder ta classe, mais sans casser les images ------- */
+.row {
+  display: flex;
+  gap: 1rem;
+}
 
-&quot;La mémoire est la clé des anciens.  
-Cherche ce qui demeure quand tout se perd.&quot;
+.row > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
 
-Trois mots sont griffonnés :
-• PIERRE  
-• VENT  
-• MÉMOIRE (encerclé)
+/* Si une image est dans un .row, on évite qu’elle soit étirée */
+.row img {
+  flex: 0 0 auto;
+}
 
-[[Essayer d&#39;utiliser ce mot-&gt;PorteGrimoire]]
-[[Retour-&gt;Salle1]]
-</tw-passagedata><tw-passagedata pid="6" name="Statue" tags="" position="900,300" size="100,100">La statue d’un chevalier tient un bouclier fissuré.
+/* ------- Responsive ------- */
+@media (max-width: 800px) {
+  .page-lettre {
+    flex-direction: column;
+  }
 
-Dans sa main, un morceau de parchemin :  
-&quot;Le gardien choisit selon le cœur, pas la force.&quot;
+  .lettre-gauche {
+    margin: 30px auto;
+    min-width: 0;
+  }
 
-Cela t’intrigue…
+  .image-droite {
+    margin: 0 auto 30px auto;
+  }
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="StoryInit" tags="" position="875,25" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Tu es élève à l’Académie de magie d’Astralis, une ancienne école cachée aux yeux des Moldus.
+Une nuit, l’école se retrouve scellée par une magie interdite.
+Le Cœur d’Astralis, artefact protégeant l’école, a disparu.
 
-[[Retour-&gt;Salle1]]
-</tw-passagedata><tw-passagedata pid="7" name="PressMoon" tags="" position="200,0" size="100,100">(set: $combo to $combo + &quot;🌙&quot;)
-(set: $length to $length + 1)
-Tu appuies sur la torche de la Lune.
+Le directeur est introuvable.
+Tu fais partie des rares élèves encore libres.
+Tu devras explorer l’académie, résoudre des énigmes magiques, choisir à qui faire confiance…
+et décider du destin de l’école.
 
-[[Continuer-&gt;Torches]]
-</tw-passagedata><tw-passagedata pid="8" name="PressSun" tags="" position="200,100" size="100,100">(set: $combo to $combo + &quot;☀️&quot;)
-(set: $length to $length + 1)
-La torche du Soleil s’allume un instant.
+[[Start-&gt;start]]
+  &lt;/div&gt;
 
-[[Continuer-&gt;Torches]]
-</tw-passagedata><tw-passagedata pid="9" name="PressStar" tags="" position="200,200" size="100,100">(set: $combo to $combo + &quot;⭐&quot;)
-(set: $length to $length + 1)
-La torche étoilée scintille.
+  &lt;img src=&quot;Images/storyinit.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
 
-[[Continuer-&gt;Torches]]
-</tw-passagedata><tw-passagedata pid="10" name="PressFire" tags="" position="200,300" size="100,100">(set: $combo to $combo + &quot;🔥&quot;)
-(set: $length to $length + 1)
-La torche enflammée crépite.
 
-[[Continuer-&gt;Torches]]
-</tw-passagedata><tw-passagedata pid="11" name="ResetCombo" tags="" position="200,400" size="100,100">(set: $combo to &quot;&quot;)
-(set: $length to 0)
-Tu effaces la combinaison et recommences.
 
-[[Retour-&gt;Torches]]
-</tw-passagedata><tw-passagedata pid="12" name="CheckCombo" tags="" position="400,300" size="100,100">Tu valides la combinaison : $combo
+</tw-passagedata><tw-passagedata pid="2" name="start" tags="" position="875,150" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+La pluie frappe les vitres du dortoir.
+Tu te réveilles en sursaut.
 
-(if: $combo is $solution)[
-    Le mur tremble… les torches s’alignent et une ouverture apparaît !
+Les bougies flottantes vacillent.
+Une voix chuchote dans ta tête :
 
-    [[Passer dans le passage secret-&gt;Couloir1]]
-]
-(else:)[
-    Un souffle glacial envahit la pièce. Mauvaise combinaison !
+&#39;&#39;&quot;L’équilibre est rompu… Aurélion a besoin de toi.&quot;&#39;&#39;
 
-    [[Réessayer-&gt;ResetCombo]]
-]
-</tw-passagedata><tw-passagedata pid="13" name="Couloir1" tags="" position="600,400" size="100,100">Le passage secret révèle un long couloir décoré de fresques anciennes.
-À la fin, une salle faiblement éclairée t’attend.
+En rassemblant tes affaires tu vis une lettre posée sur ton lit, au même moment un bruit sourd résonne.
 
-[[Avancer-&gt;Salle1]]
-</tw-passagedata><tw-passagedata pid="14" name="PorteRune" tags="" position="1000,300" size="100,100">La porte runique brille d&#39;une lueur bleue.  
-Elle semble attendre un mot.
+[[Lire la lettre-&gt;Lettre]]
+[[Sortir du dortoir-&gt;Couloir]]
+[[Prêter attention au un bruit-&gt;dortoir2]]
+&lt;/div&gt;
 
-[[Dire un mot-&gt;PorteGrimoire]]
-[[Retour-&gt;Salle1]]
-</tw-passagedata><tw-passagedata pid="15" name="PorteGrimoire" tags="" position="800,500" size="100,100">Tu prononces le mot &quot;MÉMOIRE&quot;.  
-Les runes s’illuminent et la porte s’ouvre lentement.
+&lt;img src= &quot;Images/start.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;div&gt;
+</tw-passagedata><tw-passagedata pid="3" name="Lettre" tags="" position="750,225" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+&#39;&#39;&quot;Élève,
 
-Derrière se trouve un second couloir.
+Si tu lis ceci, c’est que le Sceau Astral s’effondre.
+Les professeurs sont prisonniers du sort ancien.
 
-[[Avancer-&gt;Couloir2]]
+Trouve les trois Reliques d’Aurélion.
+Elles seules peuvent sauver l’école.&quot;
 
-</tw-passagedata><tw-passagedata pid="16" name="Couloir2" tags="" position="400,500" size="100,100">Le couloir est étroit.  
-Sur les murs, trois fresques racontent une histoire :
+— Le Conseil des Mages&#39;&#39;
 
-1️⃣ Un roi qui sacrifie sa fortune pour protéger son peuple.  
-2️⃣ Un chevalier qui tue un dragon pour la gloire.  
-3️⃣ Une mage qui partage son savoir pour aider les autres.
+[[Sortir du dortoir-&gt;Couloir]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="4" name="Couloir" tags="" position="875,325" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Le couloir semble plus long que d’habitude.
+Des portraits murmurent à ton passage.
 
-Une inscription scintille :
+Tu peux aller vers :
+- La Bibliothèque ancienne
+- La Salle des Sorts
+- Les Cachots interdits
 
-&quot;Le chemin s’ouvre à celui qui choisit ce qui doit survivre.&quot;
+[[Bibliothèque-&gt;Bibliotheque]]
+[[Salle des Sorts-&gt;SalleSorts]]
+[[Cachots-&gt;Cachots]]
+&lt;/div&gt;
 
-[[Toucher la fresque 1 (altruisme)-&gt;ChoixBon]]  
-[[Toucher la fresque 2 (ambition)-&gt;ChoixMauvais]]  
-[[Toucher la fresque 3 (sagesse)-&gt;ChoixNeutre]]
-</tw-passagedata><tw-passagedata pid="17" name="ChoixBon" tags="" position="500,700" size="100,100">Le mur s&#39;ouvre sur la Chambre de la Pierre.
+&lt;img src= &quot;Images/couloir.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;div&gt;</tw-passagedata><tw-passagedata pid="5" name="Bibliotheque" tags="" position="625,325" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Les étagères montent jusqu’au plafond.
+Un esprit-bibliothécaire flotte devant toi.
 
-[[Entrer-&gt;Pierre]]
-</tw-passagedata><tw-passagedata pid="18" name="ChoixMauvais" tags="" position="600,700" size="100,100">Le mur s’ouvre… mais une aura sombre envahit la pièce.
+&#39;&#39;&quot;Seuls les esprits logiques peuvent accéder au savoir.&quot;&#39;&#39;
 
-[[Entrer-&gt;Pierre]]
-</tw-passagedata><tw-passagedata pid="19" name="ChoixNeutre" tags="" position="700,700" size="100,100">La pierre résonne doucement. Un passage apparaît.
+Il te pose une énigme.
 
-[[Entrer-&gt;Pierre]]
-</tw-passagedata><tw-passagedata pid="20" name="Pierre" tags="" position="600,900" size="100,100">La Pierre du Souvenir flotte au centre de la salle.
+[[Écouter l’énigme-&gt;EnigmeBibliotheque]]
+&lt;/div&gt;
 
-Une apparition te parle :
-&quot;Pour prendre la pierre, il faut payer un prix.  
-Quel sera ton choix, voyageur ?&quot;
+&lt;img src= &quot;Images/bibliothèque.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
 
-[[Offrir un souvenir personnel (fin noble)-&gt;FinBonne]]  
-[[Arracher la pierre (fin tragique)-&gt;FinMauvaise]]  
-[[Proposer de devenir son gardien (fin neutre)-&gt;FinNeutre]]
-</tw-passagedata><tw-passagedata pid="21" name="FinBonne" tags="" position="500,1100" size="100,100">Tu offres un précieux souvenir.  
-La pierre te reconnaît et t&#39;accorde sa bénédiction.
+</tw-passagedata><tw-passagedata pid="6" name="SalleSorts" tags="" position="875,475" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Quatre orbes magiques flottent :
+🔵 🔴 🟢 🟡
 
-Tu sors du donjon en véritable chevalier.
+Un parchemin indique :
+&#39;&#39;&quot;Le savoir ouvre la voie,
+Le feu protège,
+La nature stabilise,
+La lumière scelle.&quot;&#39;&#39;
 
-FIN NOBLE
-</tw-passagedata><tw-passagedata pid="22" name="FinMauvaise" tags="" position="600,1100" size="100,100">Tu arraches la pierre.  
-La magie explose. Le donjon s’effondre.
+[[Toucher l’orbe bleu-&gt;Bleu]]
+[[Toucher l’orbe rouge-&gt;Rouge]]
+[[Toucher l’orbe vert-&gt;Vert]]
+[[Toucher l’orbe jaune-&gt;Jaune]]
+[[Valider la combinaison-&gt;CheckOrbes]]
+&lt;/div&gt;
 
-Tu deviens un esprit prisonnier des lieux.
+&lt;img src= &quot;Images/salledepotion.jpg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="7" name="Cachots" tags="" position="1575,300" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Les cachots sont humides et sombres.
+Une élève est enfermée dans une cellule magique.
 
-FIN TRAGIQUE
-</tw-passagedata><tw-passagedata pid="23" name="FinNeutre" tags="" position="700,1100" size="100,100">Tu proposes ton aide.  
-La pierre accepte : tu deviens son gardien.
+&#39;&#39;&quot;Libère-moi… je sais où est le Cœur d’Astralis.&quot;&#39;&#39;
 
-Tu pars, changé à jamais.
+[[La libérer-&gt;Liberer]]
+[[Refuser et partir-&gt;Refuser]]
+&lt;/div&gt;
 
-FIN NEUTRE
+&lt;img src= &quot;Images/cachot.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="8" name="EnigmeBibliotheque" tags="" position="500,325" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+&#39;&#39;&quot;Je suis toujours devant toi, mais jamais derrière.
+Je peux être vu, mais jamais attrapé.&quot;&#39;&#39;
+
+Quelle est la réponse ?
+
+[[Répondre : Le futur-&gt;BibliothequeOK]]
+[[Répondre : L’ombre-&gt;BibliothequeFail]]
+[[Répondre : Le vent-&gt;BibliothequeFail]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="BibliothequeOK" tags="" position="350,450" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+L’esprit s’incline.
+&#39;&#39;&quot;Tu as l’esprit clair.&quot;&#39;&#39;
+
+Tu obtiens le &#39;&#39;Grimoire du Sceau&#39;&#39;.
+
+[[Lire le Grimoire-&gt;Grimoire]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="BibliothequeFail" tags="" position="350,325" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+L’esprit secoue la tête.
+&#39;&#39;&quot;Mauvaise réponse.&quot;&#39;&#39;
+
+[[Réessayer-&gt;EnigmeBibliotheque]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="Bleu" tags="" position="700,575" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+L’orbe bleu brille.
+
+[[Continuer-&gt;SalleSorts]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Rouge" tags="" position="700,475" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+L’orbe rouge brille.
+
+[[Continuer-&gt;SalleSorts]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Vert" tags="" position="700,675" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+L’orbe vert brille.
+
+[[Continuer-&gt;SalleSorts]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Jaune" tags="" position="700,775" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+L’orbe jaune brille.
+
+[[Continuer-&gt;SalleSorts]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="CheckOrbes" tags="" position="875,625" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Les quatre orbes s’alignent parfaitement.
+Une onde magique traverse la salle.
+
+Une chaleur familière se diffuse dans ta main.
+Des mots s’impriment dans ton esprit.
+
+Tu viens d’apprendre le &#39;&#39;Sort de Révélation&#39;&#39;.
+
+Mais quelque chose d’autre se produit…
+
+Les orbes s’éteignent.
+
+[[Observer la salle-&gt;Observer la salle]]
+[[Réessayer-&gt;SalleSorts]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="Liberer" tags="" position="1675,425" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu brises le sort qui maintenait la cellule fermée.
+
+Les chaînes magiques tombent au sol dans un bruit sourd.
+La prisonnière reprend son souffle et te regarde avec intensité.
+
+&#39;&#39;&quot;Tu viens de faire plus que me libérer,&quot; murmure-t-elle.
+&quot;Ce choix… il a été entendu.&quot;&#39;&#39;
+
+Les murs des cachots vibrent soudain.
+Une énergie ancienne se propage dans la pierre.
+
+[[Que veux-tu dire ?-&gt;LibererRevelation]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Refuser" tags="" position="1475,475" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Son regard devient froid.
+&#39;&#39;&quot;Tu regretteras ce choix.&quot;&#39;&#39;
+
+[[Retour au couloir-&gt;Couloir]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Grimoire" tags="" position="350,575" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Tu t’installes à l’écart, le Grimoire du Sceau posé devant toi.
+Sa couverture de cuir ancien est tiède, presque vivante.
+
+Lorsque tu l’ouvres, les lettres se déplacent lentement,
+comme si le livre choisissait ce qu’il accepte de te révéler.
+
+Un titre apparaît sur la première page :
+
+&#39;&#39;&quot;LE SCEAU ASTRAL — ORIGINE ET SACRIFICE&quot;&#39;&#39;
+
+[[Lire la première page-&gt;GrimoirePage1]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/grimoire.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="GrimoirePage1" tags="" position="350,700" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+&#39;&#39;&quot;Avant la fondation d’Aurélion,
+la magie était instable et sauvage.
+
+Les anciens mages forgèrent le Sceau Astral
+non pour dominer la magie,
+mais pour la contenir.&quot;&#39;&#39;
+
+Les mots s’illuminent doucement.
+Tu ressens le poids de cette responsabilité.
+
+Une phrase est soulignée :
+
+&#39;&#39;&#39;La magie exige toujours un équilibre.&#39;&#39;&#39;
+
+[[Continuer la lecture-&gt;GrimoirePage2]]
+[[S’arrêter et réfléchir-&gt;GrimoireReflexion]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="GrimoirePage2" tags="" position="225,850" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+&#39;&#39;&quot;La stabilité du Sceau Astral
+ne repose pas sur des sortilèges,
+mais sur la volonté de celui qui le protège.
+
+Celui qui cherche le pouvoir verra le Sceau se briser.
+Celui qui accepte de perdre, le maintiendra.&quot;&#39;&#39;
+
+Une note manuscrite apparaît dans la marge :
+&#39;&#39;&#39;Le gardien ne gagne rien. Il renonce.&#39;&#39;&#39;
+
+Une sensation étrange traverse ton esprit.
+
+[[Accepter cette vérité-&gt;GrimoireAcceptation]]
+[[Rejeter cette idée (le pouvoir avant tout)-&gt;GrimoireRejet]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="GrimoireReflexion" tags="" position="225,725" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu fermes les yeux un instant.
+Si la magie doit être contenue…
+alors l’utiliser sans limite est dangereux.
+
+Tu comprends que certains sacrifices sont nécessaires.
+
+[[Reprendre la lecture-&gt;GrimoirePage2]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="GrimoireAcceptation" tags="" position="100,950" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu inspires profondément.
+Renoncer… pour protéger les autres.
+
+Ce choix te semble juste.
+Le grimoire devient plus léger entre tes mains.
+
+[[Continuer-&gt;GrimoirePage3]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="GrimoireRejet" tags="" position="250,975" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu fronces les sourcils.
+Pourquoi faudrait-il toujours perdre quelque chose ?
+
+La magie est faite pour être maîtrisée.
+Le grimoire tremble légèrement.
+
+[[Continuer-&gt;GrimoirePage3]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="GrimoirePage3" tags="" position="150,1100" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Les pages se tournent seules, plus vite.
+
+&#39;&#39;&quot;Si le gardien agit sans connaissance,
+le Sceau se retourne contre lui.
+
+Si le gardien agit sans cœur,
+le Sceau consume tout.&quot;&#39;&#39;
+
+Les lettres deviennent rouges.
+Une dernière phrase apparaît :
+
+&#39;&#39;&#39;Lis bien. Tu n’auras qu’une chance.&#39;&#39;&#39;
+
+[[Refermer le grimoire-&gt;GrimoireFinLecture]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="GrimoireFinLecture" tags="" position="150,1225" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Tu refermes lentement le Grimoire du Sceau.
+
+Tu sens que cette lecture a changé quelque chose en toi.
+Les mots résonnent encore dans ton esprit.
+
+Tu sais désormais que :
+- Le Sceau ne peut pas être forcé
+- Le sacrifice est inévitable
+- Tes choix compteront au moment final
+
+Tu as compris une grande partie du secret du Sceau.
+Cela t’aidera dans la Tour Astrale.
+
+Une phrase apparaît une dernière fois sur la page :
+
+&#39;&#39;&quot;Quand la connaissance est complète,
+les chemins se rejoignent.&quot;&#39;&#39;
+
+[[Toucher le symbole lumineux-&gt;Convergence]]
+[[Ignorer l’appel et quitter la pièce-&gt;Couloir]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/grimoirefinlecture.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="26" name="dortoir2" tags="" position="1025,150" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Alors que tu rassembles tes affaires pour quitter le dortoir,
+un bruit sourd résonne sous le plancher.
+
+Un souffle d’air glacé traverse la pièce.
+Sous un lit abandonné, une trappe dissimulée apparaît,
+recouverte de poussière et de runes presque effacées.
+
+Tu reconnais ces symboles.
+Ils sont interdits aux élèves.
+
+[[Ouvrir la trappe-&gt;Trappe]]
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="27" name="Trappe" tags="" position="1150,150" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+La trappe cède dans un grincement étouffé.
+Un escalier étroit s’enfonce dans l’obscurité.
+
+Une inscription est gravée sur la pierre :
+&#39;&#39;&quot;Ce chemin n’est emprunté que par ceux
+qui refusent de détourner le regard.&quot;&#39;&#39;
+
+Tu ressens un malaise… mais aussi de la curiosité.
+
+[[Descendre dans l’escalier-&gt;EscalierCachots]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/trappe.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="28" name="EscalierCachots" tags="" position="1275,150" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+L’escalier est humide, ancien.
+Les murs portent des marques de griffures
+et des traces de magie instable.
+
+Plus tu descends, plus l’air devient lourd.
+Tu comprends soudain :
+ce passage mène aux cachots interdits.
+
+[[Continuer-&gt;AntichambreCachots]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="AntichambreCachots" tags="" position="1450,150" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu arrives dans une petite salle voûtée,
+juste avant les véritables cachots.
+
+Des chaînes brisées pendent aux murs.
+Une porte magique bloque l’accès,
+gravée d’une seule phrase :
+
+&#39;&#39;&quot;Entre celui qui accepte d’aider,
+pas celui qui cherche à juger.&quot;&#39;&#39;
+
+
+[[Avancer vers les cachots-&gt;Cachots]]
+[[Tenter d’ouvrir la porte-&gt;ChoixCachots]]
+[[Rebrousser chemin-&gt;Couloir]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="ChoixCachots" tags="" position="1625,150" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La porte ne réagit pas à la magie.
+Elle attend une intention.
+
+Que fais-tu ?
+
+[[Promettre d’aider les prisonniers-&gt;PromesseAide]]
+[[Forcer la porte par un sort-&gt;ForcerPorte]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="PromesseAide" tags="" position="1750,225" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu poses ta main contre la pierre froide.
+
+&#39;&#39;&quot;Je n’abandonnerai personne ici.&quot;&#39;&#39;
+
+La porte vibre doucement,
+puis s’ouvre lentement.
+
+[[Entrer dans les cachots-&gt;Cachots]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="ForcerPorte" tags="" position="1750,100" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu concentres ta magie et attaques la porte.
+Elle résiste, puis cède brutalement.
+
+Un grondement résonne dans les couloirs.
+Tu sens que ce choix aura des conséquences.
+
+[[Entrer dans les cachots-&gt;Cachots]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Observer la salle" tags="" position="875,750" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La Salle des Sorts est silencieuse.
+Trop silencieuse.
+
+Les murs sont couverts de symboles anciens,
+mais certains semblent… incomplets.
+Comme si une partie de la pièce était dissimulée.
+
+Ton esprit réagit instinctivement.
+Le Sort de Révélation cherche à être utilisé.
+
+
+[[Lancer le Sort de Révélation-&gt;LancerRevelationOrbes]]
+[[Ignorer cette sensation et partir-&gt;Couloir]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="LancerRevelationOrbes" tags="" position="875,875" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu fermes les yeux et récites mentalement la formule.
+La magie coule naturellement, sans effort.
+
+Une lumière douce jaillit de ta main
+et se propage sur les murs de la salle.
+
+La pierre semble se fissurer…
+non pas physiquement,
+mais magiquement.
+
+[[Continuer-&gt;SanctuaireEntree]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="SanctuaireEntree" tags="" position="875,1000" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Tu franchis la porte révélée.
+
+Dès qu’elle se referme derrière toi,
+le silence devient total.
+
+Tu te retrouves dans un couloir circulaire,
+dont les murs semblent faits de pierre et de brume mêlées.
+Aucune rune connue. Aucun symbole de l’académie.
+
+Cet endroit ne fait partie d’aucun plan connu.
+
+[[Avancer prudemment-&gt;SanctuaireSalle]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/sanctuaireentree.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="36" name="SanctuaireSalle" tags="" position="875,1125" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Le couloir débouche sur une vaste salle ronde.
+Des dizaines de bougies flottent dans les airs,
+mais aucune ne projette d’ombre.
+
+Au centre se trouve un piédestal vide.
+
+Sur les murs, une phrase apparaît lentement :
+
+&#39;&#39;&quot;Ici ne sont jugés ni les actes passés,
+ni les serments à venir,
+mais ce que tu es quand personne ne te regarde.&quot;&#39;&#39;
+
+Tu sens que la magie de cet endroit est ancienne…
+et totalement neutre.
+
+[[Observer le piédestal-&gt;SanctuairePiedestal]]
+[[Examiner les bougies-&gt;SanctuaireBougies]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/sanctuairessalle&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="37" name="SanctuairePiedestal" tags="" position="1050,1050" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+En t’approchant du piédestal,
+une voix sans origine résonne dans la salle.
+
+&#39;&#39;&quot;Trois chemins existent.
+Un seul est honnête.
+Aucun n’est sans conséquence.&quot;&#39;&#39;
+
+Trois symboles apparaissent devant toi :
+
+🜂 Une flamme
+
+🜁 Un souffle
+
+🜄 Une goutte
+
+
+[[Choisir la flamme-&gt;ChoixFlamme]]
+[[Choisir le souffle-&gt;ChoixSouffle]]
+[[Choisir la goutte-&gt;ChoixGoutte]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="SanctuaireBougies" tags="" position="675,1225" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu lèves les yeux vers les bougies flottantes.
+
+Il y en a des dizaines,
+suspendues dans l’air comme figées dans le temps.
+Leur flamme est immobile,
+et pourtant aucune ne projette d’ombre.
+
+En t’approchant,
+tu remarques quelque chose d’étrange :
+toutes les bougies ne brillent pas avec la même intensité.
+
+Tu prends le temps d’observer attentivement.
+
+[[Observer la lumière des bougies-&gt;BougiesLumiere]]
+[[Observer leur disposition-&gt;BougiesDisposition]]
+[[Revenir au centre de la salle-&gt;SanctuaireSalle]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="ChoixFlamme" tags="" position="1200,850" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La flamme s’élève et t’entoure sans te brûler.
+
+&#39;&#39;&quot;Tu avances malgré la peur.
+Tu choisis d’agir, même sans certitude.&quot;&#39;&#39;
+
+Tu ressens une force nouvelle,
+mais aussi un poids sur tes épaules.
+
+[[Continuer-&gt;SanctuaireResultat]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="ChoixSouffle" tags="" position="1200,950" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Le souffle t’enveloppe doucement.
+
+&#39;&#39;&quot;Tu observes. Tu hésites.
+Tu sais que toute action peut blesser.&quot;&#39;&#39;
+
+Ton esprit s’éclaircit,
+mais tu sens que tu éviteras toujours les extrêmes.
+
+[[Continuer-&gt;SanctuaireResultat]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="ChoixGoutte" tags="" position="1200,1050" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La goutte se brise sur le piédestal
+et se transforme en une pluie légère.
+
+&#39;&#39;&quot;Tu ressens le poids des autres.
+Tu portes ce qui ne t’appartient pas.&quot;&#39;&#39;
+
+Une chaleur douce t’envahit.
+
+[[Continuer-&gt;SanctuaireResultat]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="SanctuaireResultat" tags="" position="1050,925" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Les symboles disparaissent.
+La salle tremble légèrement.
+
+La voix reprend :
+
+&#39;&#39;&quot;Ce choix ne te rend ni meilleur, ni plus fort.
+Il te rend cohérent.&quot;&#39;&#39;
+
+Une arche de pierre apparaît à l’opposé de la salle.
+
+[[Traverser l’arche-&gt;SanctuaireSortie]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="SanctuaireSortie" tags="" position="1050,800" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Tu franchis l’arche.
+
+Le monde semble se recomposer autour de toi.
+Le sol devient plus familier.
+L’air change.
+
+Tu es de retour dans l’académie,
+mais dans un couloir peu connu des élèves.
+Une porte ce trouve au bout.
+
+Le Sanctuaire a disparu.
+Comme s’il n’avait jamais existé.
+
+Une lumière intense t’engloutit.
+
+[[Avance vers la porte-&gt;AntichambreCachots2]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/sanctuairesortie.jpg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="44" name="BougiesLumiere" tags="" position="775,1450" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu te concentres sur les flammes.
+
+Certaines brillent fortement,
+d’autres sont presque éteintes,
+comme si elles reflétaient quelque chose d’invisible.
+
+En regardant mieux,
+tu comprends :
+&#39;&#39;Elles ne réagissent pas à l’air…
+mais à ta présence.&#39;&#39;
+
+Une pensée te traverse l’esprit :
+Et si elles réagissaient à l’intention plutôt qu’au mouvement ?
+
+[[Essayer de tendre la main calmement-&gt;BougiesCalme]]
+[[Faire un geste brusque-&gt;BougiesBrusque]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="BougiesDisposition" tags="" position="775,1350" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu observes la disposition des bougies dans l’espace.
+
+Peu à peu, un motif se dessine :
+elles forment trois cercles concentriques,
+tous orientés vers le piédestal central.
+
+Tu comptes les bougies du cercle intérieur.
+Il y en a exactement trois.
+
+Une intuition naît :
+elles représentent peut-être les choix à venir.
+
+[[Mémoriser cette information-&gt;BougiesMemoire]]
+[[Ignorer et revenir en arrière-&gt;SanctuaireSalle]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="BougiesCalme" tags="" position="1075,1500" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu tends la main lentement,
+sans chercher à toucher la flamme.
+
+Les bougies autour de toi
+brillent soudain plus fort,
+créant un cercle lumineux.
+
+Une phrase apparaît brièvement dans l’air :
+
+&#39;&#39;&quot;Ce qui est observé avec patience se révèle.&quot;&#39;&#39;
+
+Tu ressens un apaisement profond.
+
+[[Revenir à la salle-&gt;SanctuaireSalle]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="BougiesBrusque" tags="" position="1100,1375" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu fais un mouvement rapide.
+
+Les flammes vacillent violemment.
+Certaines s’éteignent,
+plongeant une partie de la salle dans l’obscurité.
+
+Une sensation de malaise t’envahit.
+
+Le sanctuaire semble te rappeler à l’ordre.
+
+[[Reculer prudemment-&gt;SanctuaireSalle]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="BougiesMemoire" tags="" position="1100,1250" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu graves cette image dans ta mémoire.
+
+Trois cercles.
+Trois flammes centrales.
+Trois choix possibles.
+
+Tu ne sais pas encore comment,
+mais cette information te semble importante.
+
+Une sensation étrange te traverse,
+comme si quelque chose venait de s’enclencher.
+
+[[Fermer les yeux-&gt;Convergence]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Convergence" tags="" position="1425,775" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Un grondement sourd traverse l’académie.
+
+Les murs vibrent.
+Les bougies s’éteignent une à une.
+
+Une voix ancienne, plus profonde que toutes les autres,
+résonne dans l’air :
+
+&#39;&#39;&quot;Les fragments sont en mouvement.
+Le Nexus s’ouvre.&quot;&#39;&#39;
+
+Un symbole apparaît sur le sol,
+identique à ceux que tu as déjà vus ailleurs…
+mais incomplet.
+
+[[Toucher le symbole-&gt;TeleportationNexus]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="LibererRevelation" tags="" position="1675,550" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La prisonnière recule, surprise.
+
+&#39;&#39;&quot;Le Sceau Astral réagit aux actes sincères.
+Quand quelqu’un aide sans attendre de récompense,
+les chemins cessent d’être séparés.&quot;&#39;&#39;
+
+Un symbole lumineux apparaît entre vous,
+identique à ceux que tu as déjà vus ailleurs.
+
+La lumière devient de plus en plus forte.
+
+[[Toucher le symbole-&gt;Convergence]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="51" name="AntichambreCachots2" tags="" position="1050,675" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+La porte se referme derrière toi dans un souffle étouffé.
+
+Tu te retrouves dans une antichambre étroite,
+bien plus ancienne que l’académie.
+
+L’air est froid.
+Des chaînes magiques pendent aux murs.
+
+Tu le comprends immédiatement :
+ce passage mène aux cachots interdits.
+
+Tu réalises que cette porte n’aurait jamais pu être trouvée 
+sans le Sort de Révélation.
+
+[[Avancer vers les cachots-&gt;Cachots2]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/antichambrecachots2.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="52" name="TeleportationNexus" tags="" position="1400,1050" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Le sol se dérobe sous tes pieds.
+
+La sensation est étrange :
+ni chute, ni vol,
+mais un déplacement hors du temps.
+
+Lorsque tu rouvres les yeux,
+tu n’es plus dans l’académie.
+
+[[Observer les lieux-&gt;NexusEntree]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="NexusEntree" tags="" position="1525,1050" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu te tiens dans une salle immense,
+dont les murs semblent faits de lumière et d’ombre mêlées.
+
+Des arches flottantes mènent vers différentes zones.
+Au centre, un cristal gigantesque pulse lentement.
+
+Une inscription apparaît :
+
+&#39;&#39;&quot;Ici convergent les choix.
+Ici se forgent les conséquences.&quot;&#39;&#39;
+
+[[Avancer vers le centre-&gt;NexusCentral]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="NexusCentral" tags="" position="1650,1050" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Depuis le Nexus central,
+tu peux accéder à plusieurs fragments de réalité.
+
+Chaque arche mène à une épreuve différente.
+Tu sens que tu n’es pas obligé de toutes les affronter…
+mais que chacune comptera.
+
+Tu vois :
+- Une arche de miroirs
+- Une arche de pierre brisée
+- Une arche de brume silencieuse
+
+[[Entrer dans l’arche des miroirs-&gt;NexusMiroirs]]
+[[Entrer dans l’arche de pierre-&gt;NexusPierre]]
+[[Entrer dans l’arche de brume-&gt;NexusBrume]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/nexuscentral.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+
+
+
+
+</tw-passagedata><tw-passagedata pid="55" name="NexusMiroirs" tags="" position="1500,1200" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Tu entres dans une salle tapissée de miroirs.
+Mais aucun ne reflète ton apparence actuelle.
+
+Ils montrent des versions possibles de toi.
+
+Une voix murmure :
+&#39;&#39;&quot;Qui serais-tu sans tes choix ?&quot;&#39;&#39;
+
+[[Avancer sans détourner le regard-&gt;MiroirsAffronter]]
+[[Briser un miroir-&gt;MiroirsBriser]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/nexusmiroir.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="56" name="NexusPierre" tags="" position="1625,1200" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu arrives dans une salle où un pont de pierre
+est brisé en plusieurs morceaux flottants.
+
+Un texte apparaît :
+
+&#39;&#39;&quot;Avancer seul est possible.
+Réparer demande du temps.&quot;&#39;&#39;
+
+[[Sauter de pierre en pierre-&gt;PierreSauter]]
+[[Tenter de réparer le pont-&gt;PierreReparer]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="NexusBrume" tags="" position="1750,1200" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Une brume épaisse t’entoure.
+Tu n’y vois rien.
+
+Une voix inconnue te guide :
+&#39;&#39;&quot;Avance. Fais-moi confiance.&quot;&#39;&#39;
+
+[[Suivre la voix-&gt;BrumeSuivre]]
+[[Refuser et avancer seul-&gt;BrumeRefuser]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="MiroirsAffronter" tags="" position="1325,1300" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu observes calmement les reflets.
+Tu acceptes ce que tu pourrais devenir.
+
+Les miroirs s’effacent.
+
+[[Avancer-&gt;NexusFinal]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="MiroirsBriser" tags="" position="1450,1350" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu frappes un miroir.
+Il se brise dans un cri aigu.
+
+Les autres miroirs s’assombrissent.
+
+[[Retour au Nexus-&gt;NexusCentral]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="PierreSauter" tags="" position="1600,1350" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu avances rapidement.
+Tu arrives de l’autre côté,
+mais le pont s’effondre derrière toi.
+
+[[Avancer-&gt;NexusFinal]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="PierreReparer" tags="" position="1700,1350" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu prends le temps de replacer chaque pierre.
+Le pont se stabilise.
+
+Tu passes sans encombre.
+
+[[Avancer-&gt;NexusFinal]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="BrumeSuivre" tags="" position="1825,1350" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu avances lentement, guidé par la voix.
+La brume se dissipe.
+
+Un passage apparaît.
+
+[[Avancer-&gt;NexusFinal]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="BrumeRefuser" tags="" position="1875,1200" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu avances à l’aveugle.
+Tu trébuches et tu te rends compte que tu tourne en rond.
+
+La brume se referme derrière toi.
+
+[[Retour au Nexus-&gt;NexusCentral]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="NexusFinal" tags="" position="1500,1550" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Le cristal du Nexus s’ouvre lentement.
+
+Une arche se forme,
+faite de racines et de lumière entrelacées.
+
+Une voix résonne une dernière fois :
+
+&#39;&#39;&quot;Ce qui reste à comprendre
+ne se trouve plus entre les murs.&quot;&#39;&#39;
+
+[[Traverser l’arche-&gt;ForetEntree]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/nexusfinal.jpg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="65" name="ForetEntree" tags="" position="1500,1700" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu émerges au cœur d’une forêt immense.
+
+Les arbres sont anciens,
+leurs troncs parcourus de runes naturelles.
+La lumière filtre difficilement à travers les feuilles.
+
+L’air est chargé de magie brute.
+Ici, aucun sort ne protège l’académie.
+
+Un sentier se divise en plusieurs directions.
+
+[[Suivre le sentier des pierres levées-&gt;ForetPierres]]
+[[Aller vers la clairière silencieuse-&gt;ForetClairiere]]
+[[S’enfoncer vers les racines profondes-&gt;ForetRacines]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="ForetPierres" tags="" position="1250,1825" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Tu arrives devant un cercle de grandes pierres.
+Chacune est gravée d’un symbole élémentaire.
+
+Une inscription est à moitié effacée :
+&#39;&#39;&quot;Trois gardent l’équilibre,
+une seule le rompt.&quot;&#39;&#39;
+
+Symboles :
+🔥 Feu
+🌊 Eau
+🌿 Vie
+⚫ Ombre
+
+[[Toucher Feu, Eau et Vie-&gt;PierresOK]]
+[[Toucher Feu, Eau et Ombre-&gt;PierresFail]]
+[[Toucher Eau, Ombre et Vie-&gt;PierresFail]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/foretdepierre.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="67" name="ForetClairiere" tags="" position="1250,1925" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La clairière est parfaitement silencieuse.
+Au centre, un animal magique blessé repose au sol.
+
+Il te regarde sans peur,
+comme s’il attendait ton choix.
+
+[[Le soigner-&gt;SoignerAnimal]]
+[[L’ignorer et partir-&gt;IgnorerAnimal]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="ForetRacines" tags="" position="1500,1900" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu descends dans une zone où les racines
+forment des arches naturelles.
+
+Des symboles sont gravés dans le bois :
+ils racontent l’histoire d’une créature ancienne,
+liée à la forêt elle-même.
+
+Une phrase se répète :
+
+&#39;&#39;&quot;Elle n’est ni bête, ni monstre.
+Elle est la mémoire.&quot;&#39;&#39;
+
+[[Continuer-&gt;Suite]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="PierresOK" tags="" position="1100,1700" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Les pierres vibrent à l’unisson.
+Le sol s’ouvre légèrement,
+révélant un ancien talisman forestier.
+
+[[Retour au carrefour-&gt;ForetEntree]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="PierresFail" tags="" position="1100,1800" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+L’ombre se répand brièvement.
+La forêt semble se refermer sur toi.
+
+Tu recules prudemment.
+
+[[Retour-&gt;ForetEntree]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="SoignerAnimal" tags="" position="1200,2050" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu utilises ce que tu as appris.
+L’animal se relève lentement,
+puis disparaît dans les bois.
+
+Un sentiment de reconnaissance flotte dans l’air.
+
+[[Continuer-&gt;Suite]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="IgnorerAnimal" tags="" position="1325,2050" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu détournes le regard.
+La clairière s’assombrit légèrement.
+
+La forêt n’oublie pas.
+
+[[Retour-&gt;ForetEntree]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="Suite" tags="" position="1475,2175" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La forêt devient plus dense.
+Les sentiers disparaissent,
+ne laissant qu’un passage unique.
+
+Entre deux falaises couvertes de mousse,
+une ouverture béante apparaît :
+une grotte ancienne.
+
+Tu sens une présence.
+
+[[Entrer dans la grotte-&gt;GrotteEntree]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="GrotteEntree" tags="" position="1350,2175" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+La grotte est immense.
+Des cristaux incrustés dans la roche diffusent une lueur dorée.
+
+L’air est chaud.
+Très chaud.
+
+Un grondement profond résonne,
+semblable à une respiration ancienne.
+
+Alors tu le vois.
+
+Un DRAGON gigantesque,
+aux écailles mêlant pierre, mousse et braises endormies,
+repose au fond de la caverne.
+
+Il ouvre lentement un œil brûlant.
+
+&#39;&#39;&quot;Humain… élève d’Aurélion.
+Pourquoi entres-tu dans mon sanctuaire ?&quot;&#39;&#39;
+
+[[Lui parler calmement-&gt;DragonParler]]
+[[Observer le dragon sans agir-&gt;DragonObserver]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/grotteentree.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="75" name="DragonParler" tags="" position="1000,2200" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu prends une profonde inspiration
+et racontes ton parcours.
+
+Les quêtes accomplies.
+Les choix difficiles.
+Les erreurs aussi.
+
+Le dragon t’écoute sans bouger.
+Chaque mot semble peser dans l’air.
+
+Le dragon incline lentement la tête.
+
+&#39;&#39;&quot;La forêt t’a mis à l’épreuve…
+et tu as compris.&quot;&#39;&#39;
+
+[[Continuer-&gt;DragonSuite]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="DragonObserver" tags="" position="1125,2200" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu restes immobile.
+Tu observes le dragon, sa respiration lente,
+les cicatrices anciennes sur ses écailles.
+
+Il te fixe longuement.
+
+&#39;&#39;&quot;Peu osent regarder sans lever l’arme.&quot;&#39;&#39;
+
+[[Continuer-&gt;DragonSuite]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="DragonSuite" tags="" position="900,1700" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Le dragon se redresse lentement,
+déployant partiellement ses ailes colossales.
+
+La chaleur devient presque insoutenable.
+
+&#39;&#39;&quot;Je suis le Gardien de la Mémoire de la Forêt.
+Je n’empêche personne de passer.
+Je rappelle seulement ce qui a été oublié.&quot;&#39;&#39;
+Il recule dans l’ombre de la caverne.
+
+[[Continuer-&gt; ApresDragon]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="CheminSeul" tags="" position="550,1700" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu remercies le dragon d’un signe de tête,
+mais choisis d’avancer par toi-même.
+
+&#39;&#39;&quot;Je dois faire ce dernier pas seul.&quot;&#39;&#39;
+
+Le dragon te fixe longuement,
+puis acquiesce lentement.
+
+&#39;&#39;&quot;Alors écoute la forêt.
+Elle ment rarement.&quot;&#39;&#39;
+
+La forêt se referme aussitôt derrière toi.
+Les arbres semblent plus hauts.
+Les ombres plus épaisses.
+
+Aucun guide.
+Aucun raccourci.
+
+Seulement ce que tu sais
+et ce que tu es prêt à risquer.
+
+[[Avancer malgré tout-&gt;SolitaireEpreuve1]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="DemanderDragon" tags="" position="675,1825" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu te tournes vers le dragon.
+
+&#39;&#39;&quot;Je ne connais pas encore tout.
+Si tu peux m’aider… je l’accepterai.&quot;&#39;&#39;
+
+Le dragon ferme les yeux un instant.
+
+Il déploie lentement ses ailes.
+
+&#39;&#39;&quot;Alors accroche-toi.
+Ce chemin n’est visible que d’en haut.&quot;&#39;&#39;
+
+Il s’abaisse devant toi,
+t’offrant son dos couvert d’écailles tièdes.
+
+[[Monter sur le dragon-&gt;DragonVol]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name=" ApresDragon" tags="" position="700,1700" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La chaleur de la grotte s’estompe.
+Le dragon est toujours là, immobile,
+observant chacun de tes gestes.
+
+Tu sais maintenant que le &#39;&#39;Cœur d’Astralis&#39;&#39;
+n’est plus très loin.
+
+Mais le chemin pour l’atteindre
+reste incertain.
+
+Le dragon rompt le silence :
+
+&#39;&#39;&quot;Le Cœur ne se laisse pas trouver par hasard.
+Il existe plusieurs chemins…
+et aucun n’est sans risque.&quot;&#39;&#39;
+
+[[Continuer seul-&gt;CheminSeul]]
+[[Demander l’aide du dragon-&gt;DemanderDragon]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="DragonVol" tags="" position="675,1950" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Le dragon s’élève dans un puissant battement d’ailes.
+
+La forêt disparaît sous toi,
+réduite à une mer de feuillage sombre.
+Le vent fouette ton visage,
+mais tu te sens étrangement en sécurité.
+
+Depuis les airs,
+tu vois des lignes de magie
+que tu n’aurais jamais pu percevoir au sol.
+
+&#39;&#39;&quot;Voici les chemins brisés,
+et celui qui tient encore.&quot;&#39;&#39;
+
+[[Regarder vers l’horizon-&gt;DragonApprocheTour]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="DragonApprocheTour" tags="" position="675,2075" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Au loin,
+la Tour Astrale Finale se dresse,
+isolée sur un promontoire rocheux.
+
+Le dragon entame sa descente.
+
+&#39;&#39;&quot;Souviens-toi,&quot;&#39;&#39; gronde-t-il,
+&#39;&#39;&quot;la hauteur donne la vision,pas la décision.&quot;&#39;&#39;
+
+[[Descendre de son dos et entre dans la tour-&gt;TourAstraleFinal]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="TourAstraleFinal" tags="" position="500,2150" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La porte de la Tour Astrale se referme derrière toi.
+
+Le silence est total.
+Aucun vent.
+Aucun écho.
+
+L’intérieur de la tour est circulaire.
+Les murs sont couverts de symboles anciens,
+tous liés aux choix, aux souvenirs et aux sacrifices.
+
+Au sommet,
+suspendu dans les airs,
+bat lentement le &#39;&#39;Cœur d’Astralis&#39;&#39;.
+
+Chaque pulsation fait vibrer la tour entière.
+
+Tu sens que tout t’a mené ici.
+
+[[Approcher du Cœur-&gt;CoeurAstralis]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="SolitaireEpreuve1" tags="" position="425,1700" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Le sentier se divise en trois chemins.
+À chaque pas, le sol se transforme légèrement.
+
+Une inscription gravée sur une racine :
+&#39;&#39;&quot;Celui qui court se perd.
+Celui qui observe avance.&quot;&#39;&#39;
+
+
+[[Marcher lentement en observant-&gt;SolitaireReussi1]]
+[[Courir avant que le chemin ne change-&gt;SolitaireEchec1]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="SolitaireReussi1" tags="" position="300,1625" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu ralentis ton pas.
+Les illusions se dissipent.
+
+Un seul chemin reste réel.
+
+[[Continuer-&gt;SolitaireEpreuve2]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="SolitaireEchec1" tags="" position="300,1750" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu accélères.
+Le sol se dérobe sous tes pieds.
+
+Tu chutes dans un roncier magique.
+Tu t’en sors blessé, mais vivant.
+
+[[Continuer, éprouvé-&gt;SolitaireEpreuve2]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="SolitaireEpreuve2" tags="" position="175,1700" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Des murmures t’encerclent.
+
+&#39;&#39;&quot;Tourne à gauche.&quot;
+&quot;Non, à droite.&quot;
+&quot;Fais demi-tour.&quot;&#39;&#39;
+
+Une seule voix est silencieuse.
+
+Une phrase te revient :
+&#39;&#39;&quot;La vérité ne crie jamais.&quot;&#39;&#39;
+
+[[Suivre la voix la plus discrète-&gt;SolitaireReussi2]]
+[[Choisir la voix la plus insistante-&gt;SolitaireEchec2]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="SolitaireReussi2" tags="" position="100,1875" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Le silence devient un passage.
+
+Tu avances sans hésiter.
+
+[[Continuer-&gt;SolitaireEpreuve3]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="SolitaireEchec2" tags="" position="225,1875" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+La voix t’entraîne dans un détour inutile.
+Le temps s’étire.
+
+Tu finis par retrouver ton chemin,
+épuisé.
+
+[[Continuer-&gt;SolitaireEpreuve3]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="SolitaireEpreuve3" tags="" position="150,2000" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Un pont ancien surplombe un ravin.
+Il est partiellement effondré.
+
+Une inscription finale :
+&#39;&#39;&quot;Demander de l’aide n’est pas faillir.
+Mais avancer seul forge.&quot;&#39;&#39;
+
+
+[[Réparer le pont pierre par pierre-&gt;SolitaireReparer]]
+[[Traverser sans réparer-&gt;SolitaireSaut]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="SolitaireReparer" tags="" position="100,2125" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu prends le temps.
+Chaque pierre replacée stabilise la magie.
+
+Le pont tient.
+
+[[Traverser-&gt;ArriveeTour]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="SolitaireSaut" tags="" position="225,2125" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Tu prends ton élan et sautes.
+
+Tu atteins l’autre côté,
+mais de justesse.
+
+[[Continuer-&gt;ArriveeTour]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="ArriveeTour" tags="" position="150,2250" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+La forêt s’ouvre enfin.
+
+Devant toi s’élève la
+&#39;&#39;Tour Astrale&#39;&#39;.
+
+Tu es arrivé seul.
+Éprouvé.
+Mais plus lucide qu’avant.
+
+Chaque pas t’a coûté quelque chose.
+
+[[Entrer dans la tour-&gt;TourAstraleFinal]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/arriveetour.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="94" name="CoeurAstralis" tags="" position="500,2275" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Plus tu t’approches,
+plus le &#39;&#39;Cœur d’Astralis&#39;&#39; réagit à ta présence.
+
+Des images traversent ton esprit :
+la lettre,
+la forêt,
+le dragon,
+les quêtes accomplies,
+et celles que tu as ignorées.
+
+Une voix résonne,
+ni masculine ni féminine :
+
+&#39;&#39;&quot;Tu es arrivé.
+Mais es-tu prêt à décider ?&quot;&#39;&#39;
+
+[[Tendre la main vers le Cœur-&gt;JugementFinal]]
+&lt;/div&gt;
+
+
+</tw-passagedata><tw-passagedata pid="95" name="JugementFinal" tags="" position="500,2400" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Le Cœur s’illumine violemment.
+
+Il ne te demande pas ce que tu veux faire.
+Il sait déjà ce que tu as fait.
+
+Les choix altruistes.
+Les raccourcis.
+La peur.
+Le courage.
+
+Tout pèse maintenant.
+
+[[Continuer-&gt;Fin]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="Fin" tags="" position="500,2525" size="100,100">&lt;div class=&quot;lettre&quot;&gt;
+Le Cœur ralentit.
+Sa lumière devient douce et stable.
+
+La tour cesse de trembler.
+Les symboles sur les murs s’alignent.
+
+&#39;&#39;&quot;Tu as compris,&quot;&#39;&#39;
+murmure la voix.
+&#39;&#39;&quot;Le pouvoir n’est rien sans responsabilité.&quot;&#39;&#39;
+
+Le Cœur se fond en toi,
+non pour te donner de la puissance,
+mais pour t’enlever le besoin d’en chercher.
+
+À l’aube,
+l’Académie renaît.
+
+Tu n’es pas devenu un héros.
+Tu es devenu un &#39;&#39;Gardien&#39;&#39;.
+
+FIN
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="Cachots2" tags="" position="1375,350" size="100,100">&lt;div class=&quot;page-lettre&quot;&gt;
+  &lt;div class=&quot;lettre lettre-gauche&quot;&gt;
+  
+Tu reconnais l’endroit.
+Ce passage secret t’a mené ici volontairement.
+Les cachots semblent… moins hostiles.
+    
+Une élève est enfermée dans une cellule magique.
+Elle te regarde avec surprise.
+
+&#39;&#39;&quot;Tu es venu par le passage oublié… alors peut-être puis-je te faire confiance, je sais où est le Cœur d’Astralis.&quot;&#39;&#39;
+
+[[La libérer-&gt;Liberer]]
+[[Refuser et partir-&gt;Refuser]]
+&lt;/div&gt;
+
+&lt;img src= &quot;Images/cachot.jpeg&quot; class=&quot;image-droite&quot;&gt;
+&lt;/div&gt;
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
