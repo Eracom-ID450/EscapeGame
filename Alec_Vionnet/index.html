@@ -3,66 +3,329 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>EscapeGame</title>
+<title>Talassophobia</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}tw-open-button[goto]{display:none}.debug-mode tw-open-button[replay],.debug-mode tw-open-button[goto]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 50%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0.25) 0%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}.debug-dialogs tw-backdrop:not(.eval-replay):not(.harlowe-crash){pointer-events:none;opacity:.1}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:14em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger .panel-tools .panel-rows>*,tw-debugger .panel-options .panel-rows>*{margin-top:.4rem;display:block}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none;top:-2px}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%;border:solid #fff !important}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .2rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play EscapeGame.</tw-noscript></noscript></tw-story>
-<tw-storydata name="EscapeGame" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="61E48F7F-FD8C-43DE-8EE6-8EDCFCE1C45D" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Démarrer" tags="" position="1200,600" size="100,100">
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXXXXXXXXXXXX=&quot;)[&#39;&#39;Bienvenue dans la Mickey House ! Malheureusement nous sommes bloqué à l&#39;intérieur ! HoHoo ! Qu&#39;allons nous faire ?&#39;&#39;]
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Talassophobia.</tw-noscript></noscript></tw-story>
+<tw-storydata name="Talassophobia" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="A54EEEC8-0450-42AC-B4E7-C6B49C9A0D68" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-[[Démarrer -&gt; ChoixN1]]</tw-passagedata><tw-passagedata pid="2" name=" q2" tags="" position="1500,400" size="100,100">Oui Hohoo ! Le Tourniquet nous sera très utile ! Quel objet nous faut-il ?
+tw-story{
+  font-family: "Press Start 2P";
+  color: lightgreen;
+  font-size: 15px;
+ background: url("https://file.garden/aWECMYK_EQYw_7ej/TableauDeBordV2.png") no-repeat center center fixed;
+  background-size: cover;
+ }
 
-[[Une bombe ? -&gt; Mort2]]
+tw-passage{
+  background-color: #006400;
+  background: radial-gradient(#004D40, #006400);
+  padding: 2rem;
+  border: 3px solid #050;
+  border-radius: 2rem;
+  border-color: lightgreen;
+  min-height: 80vh;
+ 
+ 
+}
 
-[[Du déodorant pour tétons ? -&gt; Mort 3]]
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 448px;
+  width: 600px;
+}
 
-[[Un ongle incarné ? -&gt; Mort 3]]
+body {
+  background-color:#000000
 
-[[Le maxi outil mystère ? -&gt; q4]]
-</tw-passagedata><tw-passagedata pid="3" name="Mort" tags="" position="1650,950" size="100,100">Oh non ! Nous avons trouvé Donald et le corps de Pluto par terre ! Hoohooooo !!!! Mais Donald qu&#39;est ce qui t&#39;arrives !? HoHo.. HOOOOOOOOOO !!!!!!!!!!
+}
 
-[[Démarrer]]</tw-passagedata><tw-passagedata pid="4" name=" ChoixN1" tags="" position="1525,675" size="100,100">Qu&#39;allons nous faire ? :
+.image {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	height: auto;
+  	width: 597px;
+  	max-width: 100%; 	
+}
 
-[[Tourniquet -&gt; q2]]
-[[Chercher ? -&gt;Mort]]
-[[Danser ? -&gt; q3]]
-[[Demander à Dingo -&gt; q5]]</tw-passagedata><tw-passagedata pid="5" name=" q3" tags="" position="1700,600" size="100,100">Hohoo ! Oui danser est très amusant, aller Dingo ! Mais nous ne sommes toujours pas sorti. Hohooo !
-Essayons autre chose !
+tw-link {
+  color: lightgreen;          
+  font-weight: bold;     
+  text-decoration: none;  
+  cursor: pointer;
+}
 
-[[Paniquer !]]
-[[Chercher ? -&gt;Mort]]</tw-passagedata><tw-passagedata pid="6" name=" Mort2" tags="" position="1700,200" size="100,100">Oh Nonnn ! La bombe nous a fait explosé la maison mais nous aussi ! HoHOOOO !!!
+tw-link {
+  color: lightgreen;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 4px 8px;
 
-[[Recommencer l&#39;histoire -&gt;Démarrer]]</tw-passagedata><tw-passagedata pid="7" name=" Mort 3" tags="" position="1950,300" size="100,100">Mais Non Imbécile ! Hohoo !
+  background-image: linear-gradient(lightgreen,lightgreen);
+  background-size: 0% 100%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
 
-[[Recommencer l&#39;histoire -&gt;Démarrer]]</tw-passagedata><tw-passagedata pid="8" name=" q4" tags="" position="1900,500" size="100,100">Ouiii ! Le Maxi outil mystère était une clé ! Mais où allons-nous mettre la clé ?!
+  transition:
+    background-size 0.15s ease,
+    color 0.15s ease;
+}
 
-[[Dans le cul à Dingo ? -&gt; Mort 3]]
-[[Dans la porte au milieu de la maison ? -&gt;Mort]]
-[[Dans la porte de couleur jaune ? -&gt; Fin2]]</tw-passagedata><tw-passagedata pid="9" name="Paniquer !" tags="" position="2000,900" size="100,100">Haaaaaaaaa !!! HAAAAAAAA ! HohOOOOOOO ! HohoHOOOOOO !
-OH NOON ! Dingo a fait une crise cardique ! Que faut-il faire ?!
+tw-link:hover {
+  color: #004D40;
+  background-size: 100% 100%;
+}
 
-[[Continuer à paniquer ? -&gt; Mort4]]
-[[Le défibrilateur ? -&gt; Fin1]]</tw-passagedata><tw-passagedata pid="10" name=" Mort4" tags="" position="2100,600" size="100,100">OHHH ! HoHOOOOo hoo ho... hoooo...... ! 
-Mickey est mort d&#39;un crise cardiaque.
+tw-link.visited {
+  color: inherit;
+ 
+}
 
-[[Recommencer l&#39;histoire -&gt;Démarrer]]</tw-passagedata><tw-passagedata pid="11" name=" Fin1" tags="" position="1600,1200" size="100,100">Oui ! très bonne idée ! VVVVVVVVVvvv... KzzzZZZZzzZzzzz !!! Wayouuuuuuu ! 
-Bravo ça marche, Dingo est vivant, et l&#39;ambulance est venu pour nous sauver ! Hohoo !
+tw-link:hover,
+tw-link.visited:hover {
+  color: #004D40;
+  background-size: 100% 100%;
+}
 
-Fin
 
-[[Recommencer l&#39;histoire -&gt;Démarrer]]</tw-passagedata><tw-passagedata pid="12" name=" Fin2" tags="" position="2225,425" size="100,100">Oui Hohooo ! C&#39;était la bonne porte ! Nous sommes libre !
 
-Fin
 
-[[Redémarrer l&#39;histoire -&gt;Démarrer]]</tw-passagedata><tw-passagedata pid="13" name=" q5" tags="" position="2200,850" size="100,100">Oui ! Dingo aurait tu une solution ? 
-- Hug Hug oui ! Mais j&#39;ai besoin du consentement.
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+</script><tw-passagedata pid="1" name="Expedition1" tags="" position="3100,2700" size="100,100">Tu as été pris en tant que pilote de sous-marin afin d&#39;explorer la fosse abyssale, la plus profonde de la planète. Voici ton sous-marin, il comprends un harpon pour ramener des spécimènes.
 
-[[Accepter -&gt; Mort5]]
-[[Refuser -&gt; ChoixN1]]</tw-passagedata><tw-passagedata pid="14" name=" Mort5" tags="" position="2000,1250" size="100,100">Mais pourquoi as-tu besoins du consentement Dingo ? Hooho ! Dingo !? Hohoooo HOOOOHOOOOOOO !!! DINGOOOOO!!!!!!! HOOOOOOOHO !! *Clap *Clap *Clap
+[[Commencez l&#39;histoire-&gt;Le N°1]]
 
-[[Recommencer l&#39;histoire -&gt;Démarrer]]</tw-passagedata></tw-storydata>
+
+</tw-passagedata><tw-passagedata pid="2" name="Le N°1" tags="" position="3100,2900" size="100,100">Tu choisis le sous marin avec le harpon et l&#39;on te glisse donc le mode d&#39;emploi, tu l&#39;ouvres et tourne les pages une par une. Dans ce sous marin tu as les commandes pour te déplacer, un radar, un appareil photo, une torpille à utilisation unique, la radio et ton harpon. Pas de vitre, pas de lit que de la féraille.
+
+[[Continuer à lire le mode d&#39;emploi]]
+[[Monter à bord du sous-marin]]</tw-passagedata><tw-passagedata pid="3" name="Continuer à lire le mode d&#39;emploi" tags="" position="2900,2875" size="100,100">Le mode d&#39;emploi de donne des infos plus précise par rapport au éventuel problème, tourne vis, féraille et clou en cas de fuite, extincteur en cas de feu, ainsi qu&#39;un kit d&#39;éléctricité en cas de problème technique. Tout cela compris dans une soute à l&#39;abris.
+
+[[Monter à bord du sous-marin-&gt;Safe]]</tw-passagedata><tw-passagedata pid="4" name="Monter à bord du sous-marin" tags="" position="3400,2900" size="100,100">Tu ne prêtes pas attention à la suite du mode d&#39;emploi mais le gardes tout de même avec toi. Tu montes dans le sous marin, fait quelques tests techniques et finalement tu est prêt à partir, l&#39;équipe n&#39;attends plus que ton signal.
+
+[[C&#39;est partit !]]
+[[Attendez !]]
+
+</tw-passagedata><tw-passagedata pid="5" name="Safe" tags="" position="2700,2900" size="100,100">Tu montes dans le sous marin, et t&#39;installes sur ton siège. Après un contrôle technique tu es prêt à partir en expédition.
+
+[[Plonger]]</tw-passagedata><tw-passagedata pid="6" name="C&#39;est partit !" tags="" position="3800,2900" size="100,100">L&#39;équipe lâche le sous marin dans l&#39;eau et tu entames ta descente aux abysses. Après quelques minutes tu atteint la sol des abysses, tu es la personne la plus profonde du monde.
+La radio a grésille à cause de la distance et tu n&#39;entends qu&#39;un mot sur trois.
+&quot;Tu...EsT...FoNd...BoN ?&quot; Tu répond oui et entames ton exploration. 
+Dans quelle direction vas-tu partir ?
+
+[[Tout droit]]
+[[Gauche]]
+[[Droite]]
+
+
+</tw-passagedata><tw-passagedata pid="7" name="Attendez !" tags="" position="3600,3000" size="100,100">L&#39;équipe arrête la manoeuvre dans l&#39;incompréhension. &quot;Que se passe-t-il ?&quot; Dit on à la radio.
+
+[[Non rien c&#39;est bon-&gt;C&#39;est partit !]]
+[[Je dois lire le mode d&#39;emploi !-&gt; Mode d&#39;emploi]]</tw-passagedata><tw-passagedata pid="8" name=" Mode d&#39;emploi" tags="" position="3200,3300" size="100,100">Tu entends un léger soupir à la radio et prends ton mode d&#39;emploi. Il donne des infos concernant les éventuels problème, tourne vis, féraille et clou en cas de fuite, extincteur en cas de feu, ainsi qu&#39;un kit d&#39;éléctricité en cas de problème technique. Tout cela compris dans une soute à l&#39;abris.
+
+[[C&#39;est partit !!!]]</tw-passagedata><tw-passagedata pid="9" name="C&#39;est partit !!!" tags="" position="2900,3300" size="100,100">L&#39;équipe lâche le sous marin dans l&#39;eau et tu entames ta descente aux abysses. Après quelques minutes tu atteint la sol des abysses, tu es la personne la plus profonde du monde.
+La radio a grésille à cause de la distance et tu n&#39;entends qu&#39;un mot sur trois.
+&quot;Tu...EsT...FoNd...BoN ?&quot; Tu répond oui et entames ton exploration. 
+Dans quelle direction vas-tu partir ?
+
+[[Tout droit-&gt;Tout droitSafe]]
+[[Gauche-&gt;GaucheSafe]]
+[[Droite-&gt;DroiteSafe]]
+
+</tw-passagedata><tw-passagedata pid="10" name="Plonger" tags="" position="2500,2900" size="100,100">Le sous-marin est plongé dans l&#39;océan et après environ 1 heures tu arrives finalement aux abysses. Trois directions semblent s&#39;offrirent à toi, laquelle choisis-tu ?
+
+[[Gauche-&gt;GaucheSafe]] 
+[[Tout droit-&gt;Tout droitSafe]] 
+[[Droite-&gt;DroiteSafe]] </tw-passagedata><tw-passagedata pid="11" name="Tout droit" tags="" position="4000,3100" size="100,100">L&#39;idée de partit vers l&#39;avant te semble correcte et tu te ainsi en route. Quelques minutes après ton radar ce met à clignoter, quelque chose semble de bloquer le passage, tu pourrait essayer de lancer une torpille afin de te frayer un chemin.
+
+[[Lancer Torpille]]
+[[Lire Le Manuel Avant]]</tw-passagedata><tw-passagedata pid="12" name="Gauche" tags="" position="4000,3300" size="100,100">Tu pars dans la direction de gauche et ton radar se met à clignoter de plus en plus vite.
+
+[[Continuer]]
+[[Partir à droite-&gt;Droite]]</tw-passagedata><tw-passagedata pid="13" name="Droite" tags="" position="4000,2900" size="100,100">Tu décides de partir vers la droite, tu actionne le moteur et avance la manivelle vers l&#39;avant. Le silence règne, pas un bruit, comme si ta présence pérturbait les potentielles créatures qui imprégnent ces eaux. Soudain, un bruit stridant de férailles, qu&#39;est ce que c&#39;était ?
+
+[[ignorer]]
+[[photo]]
+[[Partir à gauche-&gt;Gauche]]</tw-passagedata><tw-passagedata pid="14" name="Tout droitSafe" tags="" position="2300,2900" size="100,100">L&#39;idée de partit vers l&#39;avant te semble correcte et tu te ainsi en route. Quelques minutes après ton radar ce met à clignoter, quelque chose semble de bloquer le passage, tu pourrait essayer de lancer une torpille afin de te frayer un chemin.
+
+[[Lancer Torpille-&gt;2]]
+[[ignorer-&gt;GaucheSafe]]
+[[Lire Manuel]]</tw-passagedata><tw-passagedata pid="15" name="GaucheSafe" tags="" position="2400,3400" size="100,100">Tu pars dans la direction de gauche et ton radar se met à clignoter de plus en plus vite.
+
+[[Continuer-&gt;Meurt]]
+[[Partir à droite-&gt;DroiteSafe]]</tw-passagedata><tw-passagedata pid="16" name="DroiteSafe" tags="" position="2250,3150" size="100,100">Tu actives le moteur et par en direction de la droite. Après quelques minutes, tu entends un chant étrange, qu&#39;est ce que c&#39;est ?
+
+[[Photo-&gt;Photo4]]
+[[Ignorer-&gt;ignorer1]]</tw-passagedata><tw-passagedata pid="17" name="Continuer" tags="" position="4400,3400" size="100,100">Tu ignores l&#39;avertissement et continue dans ta direction, le radar se met à émettre un bruit stridant puis tu heurtes quelque chose violamment. L&#39;eau s&#39;engouffre instantanément dans ton sous-marin et tu meurs.
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="18" name="Lancer Torpille" tags="" position="4400,3000" size="100,100">Tu appuyes sur le bouton la torpille se lance et explose contre ce qui sonne comme de la roche. Soudain une violente secousse te met à terre, un débris à dû heurter le sous-marin ! Et un tuyau fuit ! Que faire ?!
+
+[[Chercher de quoi réparer]]
+[[Lire le manuel]]
+</tw-passagedata><tw-passagedata pid="19" name="Lire Le Manuel Avant" tags="" position="4400,3200" size="100,100">Tu prends tes précautions et lis attentivement le mode d&#39;emploi de la torpille, c&#39;est dit &quot;Tenez vous à bonne distance de la cible, afin d&#39;éviter toute déflagrations ou débris puis tirez“, Tu recules puis t&#39;approches du tableau de bord. Cela vaut-il vraiment le coup ?
+
+[[Tirer]]
+[[Partir]]
+</tw-passagedata><tw-passagedata pid="20" name="Chercher de quoi réparer" tags="" position="4700,3000" size="100,100">Tu cherches mais en vain, tu ne trouves pas, cela devait être à l&#39;abris, tu aurait dû lire le manuel... quoi que, tu n&#39;avais pas le temps pour cela non plus. Tu repenses au moment où tu pouvait encore lire ce manuel, tu aurait dû le lire tu le savais ! Tu te laisse noyé dans les abysses qui te laisseront prisonnière de tes regrets.
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="21" name="Lire le manuel" tags="" position="4700,2800" size="100,100">Tu attrapes le manuel, et cherche la page des cas d&#39;urgences, ainsi que les fournitures te servant à te sortir de ces situations. Plus les pages tournent plus l&#39;eau et l&#39;air fuit, tu n&#39;as pas le temps de trouver cette page que tu finit sous l&#39;eau... c&#39;est la fin.
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="22" name="Tirer" tags="" position="4700,3200" size="100,100">Après avoir tirez, tu sens une très légère secousse, tu regardes ton radar... plus rien. Tu t&#39;engouffres alors dans cette faille et ton radar sonne il ne te reste plus qu&#39;un chemins disponible.
+
+[[Tout droit-&gt;tout droit]]
+[[Photo]]
+[[Partir]] 
+</tw-passagedata><tw-passagedata pid="23" name="Partir" tags="" position="5225,3000" size="100,100">Par précaution, ou par peur, tu t&#39;éloignes de cet endroit et continue ton chemin vers la droite, quand un message parvient à ta radio, &quot;..-. ..- .. -&quot; qu&#39;est ce que cela peut vouloir dire ? 
+
+[[Regarder dans le manuel]]
+[[ignorer le message]]</tw-passagedata><tw-passagedata pid="24" name="Meurt" tags="" position="2200,3400" size="100,100">Tu ignores l&#39;avertissement et continue dans ta direction, le radar se met à émettre un bruit stridant puis tu heurtes quelque chose violamment. L&#39;eau s&#39;engouffre instantanément dans ton sous-marin et tu meurs.
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="25" name="tout droit" tags="" position="5500,3200" size="100,100">Tu continues ton chemin dans cette endroit, lorsque tu sens de légère secousse, rien qui ne pourrait nuire à ton sous-marin, n&#39;est-ce pas ? Hélas le réservoir, étant légérement instable, se met à fumer, puis à brûler. Que faire ? Tu risques bientôt d&#39;étouffer là dedans !
+
+[[Chercher de quoi arrêter le feu]]
+[[Le manuel]]</tw-passagedata><tw-passagedata pid="26" name="Photo" tags="" position="5000,2800" size="100,100">Tu décides de prendre une photo de l&#39;endroit pour avoir un visuel, tu appyes sur le bouton et, suivi de quelque secondes de silence, une photo apparait à l&#39;écran.
+
+[[Partir]]
+[[tout droit-&gt;Suite]] 
+
+&lt;img class=&quot;image&quot; src=&quot;https://file.garden/aWECMYK_EQYw_7ej/CreuvasseAbysses.jpg&quot;&gt;
+</tw-passagedata><tw-passagedata pid="27" name="ignorer" tags="" position="4400,2600" size="100,100">Tu décides d&#39;ignorer le bruit et continues ton chemin, tu avances sereinement jusqu&#39;à ce que un grognement ce fasse entendre.
+
+[[Photo-&gt;photo]]
+[[ignorer-&gt;Moort]]
+
+</tw-passagedata><tw-passagedata pid="28" name="photo" tags="" position="4400,2800" size="100,100">...
+
+&lt;img class=&quot;image&quot; src=&quot;https://file.garden/aWECMYK_EQYw_7ej/MonsterAbysse.jpg&quot;&gt;
+
+[[Fuir-&gt;Moort]]</tw-passagedata><tw-passagedata pid="29" name="Regarder dans le manuel" tags="" position="5525,3000" size="100,100">Tu regardes dans le manuel et trouve la page correspondant à se message en morse.
+
+[[∆-&gt;F]]</tw-passagedata><tw-passagedata pid="30" name="ignorer le message" tags="" position="5525,2800" size="100,100">Peut importe ce que cela doit dire, tu continues ton exploration. Tu sens ton sous marin tanguer de gauche à droite, il y a quelque chose par ici...
+
+[[Photo-&gt;KO]]
+[[Continuer l&#39;exploration]]
+</tw-passagedata><tw-passagedata pid="31" name="F" tags="" position="5825,3000" size="100,100">F...
+
+[[∆-&gt;U]]</tw-passagedata><tw-passagedata pid="32" name="U" tags="" position="5925,3000" size="100,100">U...
+
+[[∆-&gt;I]]</tw-passagedata><tw-passagedata pid="33" name="I" tags="" position="6025,3000" size="100,100">I...
+
+[[∆-&gt;T]]</tw-passagedata><tw-passagedata pid="34" name="T" tags="" position="6125,3000" size="100,100">T...
+
+[[∆-&gt;Fuit]]</tw-passagedata><tw-passagedata pid="35" name="Fuit" tags="" position="6250,3000" size="100,100">Fuit ! Pourquoi envoie-t-il ça ?! Il y aurait un danger ?! Mais quoi ?! Trop de questions sans réponses tu dois faire quelque chose et vite !
+
+[[Fuir-&gt;OK]]
+[[Photo-&gt;KO]]
+[[ignorer-&gt;Dead]]</tw-passagedata><tw-passagedata pid="36" name="OK" tags="" position="6700,3100" size="100,100">Tu n&#39;hésite pas un instant et essaye de remonté à la surface, tu entends des grognements proches de toi, une créature t&#39;as repérée et n&#39;a pas l&#39;air d&#39;aimer ta présence dans ses eaux. Tu dois aller plus vite !!!
+
+[[Activer le boost]]</tw-passagedata><tw-passagedata pid="37" name="KO" tags="" position="6600,2775" size="100,100">Tu décides de prendre en photo afin d&#39;avoir des potentiels informations sur ce qu&#39;il se passes, tu appuyes sur le bouton.
+
+[[Appuyer]]</tw-passagedata><tw-passagedata pid="38" name="Dead" tags="" position="6700,2900" size="100,100">Tu ignores cet avertissement en te disant que cela devait être une fausse alerte. Au même moment un bruit strident ce fait entendre, quelque chose tape contre ton sous-marin.</tw-passagedata><tw-passagedata pid="39" name="Appuyer" tags="" position="6800,2700" size="100,100">Ce que tu vois te glace le sang, tu ne sais pas qu&#39;est ce que c&#39;est, mais ce qui est sûr c&#39;est qu&#39;elle ne veut pas de toi ici. Tu actionnes le moteur et essayes de fuir mais, elle t&#39;attrapes et croques dans le sous-marin, tu vois distinctement ses cros assérés trouant peu à peu la férailles. L&#39;eau s&#39;engouffre et tout se ressère autour de toi, vas-tu mourir noyé, broyé ou croqué ? Peu importe c&#39;est la fin...
+
+&lt;img class=&quot;image&quot; src=&quot;https://file.garden/aWECMYK_EQYw_7ej/MonsterAbysse2.jpg&quot;&gt;
+
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="40" name="Suite" tags="" position="5200,2800" size="100,100">Cette photo montre un endroit très escarpé, et tu commences à douter si tu devrais y aller ou pas. Ce choix ne tient qu&#39;à toi.
+
+[[Partir]]
+[[Continuer-&gt;tout droit]]</tw-passagedata><tw-passagedata pid="41" name="Chercher de quoi arrêter le feu" tags="" position="5800,3200" size="100,100">Tu cherches mais ne trouves absolument rien, peut être aurait tu d&#39;autre information dans le manuel ? 
+
+[[Le manuel]] </tw-passagedata><tw-passagedata pid="42" name="Le manuel" tags="" position="5800,3500" size="100,100">Tu cherches dans le manuel où trouver les objets en cas d&#39;urgences, mais tu tousse de plus en plus fort, et ta vision se brouille. Mourir brûler sous plus de 11 000 mètre cube d&#39;eau, le comble... Pourtant c&#39;est ce qu&#39;il s&#39;est passé.
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="43" name="Continuer l&#39;exploration" tags="" position="5700,2700" size="100,100">Cela doit surement être quelque chose d&#39;intéressant te dis-tu. Tu continues et là, un grognement ce fait entendre. C&#39;était donc ça le message envoyé par l&#39;équipe ? 
+
+[[Fuir]]
+[[Continuer-&gt;:(]]</tw-passagedata><tw-passagedata pid="44" name="Fuir" tags="" position="6000,2500" size="100,100">Tu décides de fuir le danger, mais c&#39;est trop tard... la créature attrapes ton sous-marin, et te tire au fin fond des abysses. 
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="45" name=":(" tags="" position="6000,2700" size="100,100">Tu continues l&#39;exploration, en faisant l&#39;ignorant, et cela te coutera la vie...
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="46" name="Activer le boost" tags="" position="6900,3100" size="100,100">Tu montes la manivelle au max et échappe de peu à la créature, tu rentres sur le bateau et raconte ton aventure, en donnant le plus d&#39;infos possible.
+
+Bravo tu as survécu ! Tu n&#39;as pas été trop curieux et cela t&#39;as sauvé.
+
+[[Rejouer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="47" name="2" tags="" position="2000,2700" size="100,100">Tu lances la torpille et elle explose contre ce qui sonne comme de la roche. Soudain une violente secousse te met à terre, un débris à dû heurter le sous-marin ! Et un tuyau fuit ! Que faire ?!
+
+[[Réparer]]
+
+</tw-passagedata><tw-passagedata pid="48" name="Lire Manuel" tags="" position="2000,2900" size="100,100">D&#39;après le manuel, c&#39;est dit, &quot;Tenez vous à bonne distance de la cible, afin d&#39;éviter toute déflagrations ou débris puis tirez&quot;. Tu hésites un instant... Veut-tu vraiment tirer ?
+
+[[oui]]
+[[non]]</tw-passagedata><tw-passagedata pid="49" name="Réparer" tags="" position="1700,2700" size="100,100">Grâce au instruction dans le manuel, tu sais ou se trouve les outils en cas de secours et répare, sans trop de soucis le tuyau. Désormais ton radar ne clignote plus, il t&#39;indique que plus aucun obstacle entrave ton chemin.
+
+[[Continuer-&gt;Creuvasse]]
+[[Photo-&gt;Photo2]]
+[[Partir vers la droite-&gt;DroiteSafe]]</tw-passagedata><tw-passagedata pid="50" name="Creuvasse" tags="" position="1400,2700" size="100,100">Tu pénètres dans la crevasse, ton radar sonne à gauche et à droite, plus qu&#39;un seul passage possible.
+
+[[Tout droit-&gt;ok]]</tw-passagedata><tw-passagedata pid="51" name="oui" tags="" position="1800,3100" size="100,100">Tu veux absolument savoir ce qui se trouve la derrière, tu recules et lances ta torpille. Tu sens une trés légère secousse, tu regarde ton radar... plus rien. 
+
+[[avancer-&gt;Creuvasse]]
+[[photo-&gt;Photo2]]</tw-passagedata><tw-passagedata pid="52" name="non" tags="" position="1800,2900" size="100,100">par précautions, ou par peur, tu t&#39;enfuis de cet endroit, et reviens à ton point de départ.
+Il te faut choisir un autre chemin.
+
+[[Gauche-&gt;GaucheSafe]]
+[[Droite-&gt;DroiteSafe]]
+[[Photo-&gt;Photo3]]</tw-passagedata><tw-passagedata pid="53" name="ok" tags="" position="1200,2700" size="100,100">Le passage est très escarpé et un rocher heurtes le réservoir. Tout commences à fumer, tu vas bientôt étouffer là dedans !
+
+[[Réparer-&gt;Ok]]</tw-passagedata><tw-passagedata pid="54" name="Ok" tags="" position="1000,2700" size="100,100">Tu vas vite chercher l&#39;extincteur puis éteint le feu. Tu es sauvé, tu vas enfin pouvoir accéder de l&#39;autre côter.
+
+[[Suite-&gt;PasOke]]</tw-passagedata><tw-passagedata pid="55" name="PasOke" tags="" position="800,2700" size="100,100">Ton radar s&#39;arrête... tu es face à une grande plaine sous-marine. Est-ce une bonne idée de s&#39;éloigner du point d&#39;éxtraction ?
+
+[[S&#39;éloigner]]
+[[Photo-&gt;Photo1]]</tw-passagedata><tw-passagedata pid="56" name="S&#39;éloigner" tags="" position="600,2700" size="100,100">Tu t&#39;éloignes dans cet endroit, pas un bruit, jusqu&#39;à ce que quelque chose te heurtes, ton radar n&#39;as pas sonné pour te prévenir pourtant... évidémment, la chose que tu as heurté se déplaçait vers toi ! Tu est rentré dans l&#39;antre d&#39;une créature titanesque !
+
+La créature t&#39;avale tout rond comme un grain de riz, ta vision se brouille, c&#39;est la fin.
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="57" name="Photo1" tags="" position="600,2900" size="100,100">Dans un léger silence, tu prends ta photo... ce que tu vois te fige. Heureusement que tu n&#39;as pas continuer tout droit, ceci était l&#39;antre d&#39;une créature titanesque.
+
+[[Suite-&gt;FIn]]
+
+
+&lt;img class=&quot;image&quot; src=&quot;https://file.garden/aWECMYK_EQYw_7ej/1768560015997-019bc663-9be2-7e4b-80c0-9bad5f7262c2.jpg&quot;&gt;</tw-passagedata><tw-passagedata pid="58" name="Photo2" tags="" position="1500,2900" size="100,100">Tu presse le bouton, &quot;CLICK&quot;. Tu vois maintenant parfaitement la crevasse.
+
+[[Continuer-&gt;Creuvasse]]
+
+&lt;img class=&quot;image&quot; src=&quot;https://file.garden/aWECMYK_EQYw_7ej/CreuvasseAbysses.jpg&quot;&gt;
+</tw-passagedata><tw-passagedata pid="59" name="Photo3" tags="" position="2000,3100" size="100,100">Tu prends la photo, et tu as désormais un aperçu de l&#39;endroit où tu es arrivé, l&#39;équipe à bien choisit.
+
+[[Gauche-&gt;GaucheSafe]]
+[[Droite-&gt;DroiteSafe]]
+
+&lt;img class=&quot;image&quot; src=&quot;https://file.garden/aWECMYK_EQYw_7ej/ROCHEABYSSE.jpg&quot;&gt;
+</tw-passagedata><tw-passagedata pid="60" name="FIn" tags="" position="600,3025" size="100,100">Tu remontes à la surface et donne les informations, ainsi que les photos prisent. L&#39;équipe te remercies et te donne ta payes. &quot;Wahou ! 100&#39;000 .- !? ça valait le coup !&quot; te dis-tu.
+
+Bravo ! Tu t&#39;es échappé des abysses avec plusieurs informations !
+
+[[Rejouer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="61" name="Photo4" tags="" position="2000,3250" size="100,100">Tu prends la photo et aperçois cette créature très spéciale, elle a l&#39;air innofensive. peut être pourrait-tu la ramener à ton équipage ?
+
+&lt;img class=&quot;image&quot; src=&quot;https://file.garden/aWECMYK_EQYw_7ej/BiglinSquidBLACKWHITE.jpg&quot;&gt;
+
+[[Harponner]]
+[[Ignorer-&gt;ignorer1]]</tw-passagedata><tw-passagedata pid="62" name="ignorer1" tags="" position="2000,3400" size="100,100">Tu décides d&#39;ignorer tou ça et donc de partir dans une autre direction.
+
+[[Partir tou droit-&gt;Tout droitSafe]]</tw-passagedata><tw-passagedata pid="63" name="Harponner" tags="" position="1850,3250" size="100,100">Tu t&#39;installes dans le canon et orientes ton viseur en driection du chant, puis tu réfléchis. Est-ce vraiment une bonne idée ? Cette chose ne t&#39;as rien demandé.
+
+[[Tirer-&gt;Tirer1]]
+[[Laisser]]</tw-passagedata><tw-passagedata pid="64" name="Tirer1" tags="" position="1600,3400" size="100,100">Après tout, tu es là pour ça, tu dois le faire pour ton équipage. Tu appuyes sur le bouton en éspérant que ton tire oarte au bon endroit... loupé... tu ramène ton harpon, puis retires... touché ! La créature émet un chant de terreur, et tu remontes à la surface.
+Tu reçois ta payes, plus un bonus avec le spécimens... 300&#39;000.-... ces sous qui te rapelleront que tu es un tueur.
+
+Bravo ! Tu as réussi, et tu as même ramener un spécimens jamais répértoitier !
+
+[[Rejouer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="65" name="Laisser" tags="" position="1600,3250" size="100,100">Tu laisses la créature tranquille, peut être ferait-tu mieuc de la suivre ? Peut être qu&#39;elle t&#39;amèneras à un endroit ?
+
+[[Suivre]]
+[[Partir Tout droit-&gt;Tout droitSafe]]</tw-passagedata><tw-passagedata pid="66" name="Suivre" tags="" position="1400,3250" size="100,100">Tu suis le chant de la créature, c&#39;est comme si elle te parlait, elle t&#39;invitait à venir à elle.
+Soudain tu entends plusieurs chant, la créature a ramené les siens. Le premier contact avec des spécimens des abysses. 
+
+[[Suite-&gt;DEAD]]</tw-passagedata><tw-passagedata pid="67" name="DEAD" tags="" position="1250,3250" size="100,100">peu à peu les chants se transforment en éspèce de cris, l&#39;ambiance devient pesante, puis les cris viennent droit sur toi et attquent ton sous-marin ! La créature avait appelé des renforts ! Elles se mettent à dévorer la férailles, puis l&#39;eau s&#39;engouffres...
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata><tw-passagedata pid="68" name="Moort" tags="" position="4600,2600" size="100,100">La créature t&#39;attrapes et plante ses crocs dans ton sous marin, en plein dans le réservoir... BOUUUUMMM !!! Il ne reste plus rien de toi et de la créature...
+
+[[Recommencer-&gt;Expedition1]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
